@@ -1,12 +1,36 @@
+using PetHotelApp.Data;
+using PetHotelApp.Models;
 using PetHotelApp.Services;
 
 namespace PetHotelApp
 {
     public partial class Form1 : Form
     {
+
+        private readonly AppDbContext _context;
+
         public Form1()
         {
             InitializeComponent();
+            _context = new AppDbContext();
+
+            SeedRooms();
+        }
+
+        private void SeedRooms()
+        {
+            if (!_context.Rooms.Any())
+            {
+                _context.Rooms.AddRange(new List<Room>
+        {
+            new Room { RoomNumber = "101", IsOccupied = false },
+            new Room { RoomNumber = "102", IsOccupied = false },
+            new Room { RoomNumber = "103", IsOccupied = false }
+        });
+
+                _context.SaveChanges();
+                MessageBox.Show("Sample rooms added to the database!");
+            }
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)

@@ -33,6 +33,7 @@
             btnLogin = new MaterialSkin.Controls.MaterialButton();
             btnRegister = new MaterialSkin.Controls.MaterialButton();
             chkShowPassword = new MaterialSkin.Controls.MaterialCheckbox();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // txtUsername
@@ -49,7 +50,7 @@
             txtUsername.HideSelection = true;
             txtUsername.InsertKeyMode = InsertKeyMode.Default;
             txtUsername.LeadingIcon = null;
-            txtUsername.Location = new Point(63, 55);
+            txtUsername.Location = new Point(135, 118);
             txtUsername.Mask = "";
             txtUsername.MaxLength = 32767;
             txtUsername.MouseState = MaterialSkin.MouseState.OUT;
@@ -66,7 +67,7 @@
             txtUsername.SelectionLength = 0;
             txtUsername.SelectionStart = 0;
             txtUsername.ShortcutsEnabled = true;
-            txtUsername.Size = new Size(209, 48);
+            txtUsername.Size = new Size(221, 48);
             txtUsername.SkipLiterals = true;
             txtUsername.TabIndex = 1;
             txtUsername.TabStop = false;
@@ -90,7 +91,7 @@
             txtPassword.HideSelection = true;
             txtPassword.InsertKeyMode = InsertKeyMode.Default;
             txtPassword.LeadingIcon = null;
-            txtPassword.Location = new Point(63, 134);
+            txtPassword.Location = new Point(135, 192);
             txtPassword.Mask = "";
             txtPassword.MaxLength = 32767;
             txtPassword.MouseState = MaterialSkin.MouseState.OUT;
@@ -107,7 +108,7 @@
             txtPassword.SelectionLength = 0;
             txtPassword.SelectionStart = 0;
             txtPassword.ShortcutsEnabled = true;
-            txtPassword.Size = new Size(209, 48);
+            txtPassword.Size = new Size(221, 48);
             txtPassword.SkipLiterals = true;
             txtPassword.TabIndex = 2;
             txtPassword.TabStop = false;
@@ -124,7 +125,7 @@
             btnLogin.Depth = 0;
             btnLogin.HighEmphasis = true;
             btnLogin.Icon = null;
-            btnLogin.Location = new Point(79, 221);
+            btnLogin.Location = new Point(155, 298);
             btnLogin.Margin = new Padding(4, 6, 4, 6);
             btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             btnLogin.Name = "btnLogin";
@@ -144,7 +145,7 @@
             btnRegister.Depth = 0;
             btnRegister.HighEmphasis = true;
             btnRegister.Icon = null;
-            btnRegister.Location = new Point(79, 269);
+            btnRegister.Location = new Point(231, 298);
             btnRegister.Margin = new Padding(4, 6, 4, 6);
             btnRegister.MouseState = MaterialSkin.MouseState.HOVER;
             btnRegister.Name = "btnRegister";
@@ -161,24 +162,39 @@
             // 
             chkShowPassword.AutoSize = true;
             chkShowPassword.Depth = 0;
-            chkShowPassword.Location = new Point(316, 145);
+            chkShowPassword.Location = new Point(135, 243);
             chkShowPassword.Margin = new Padding(0);
             chkShowPassword.MouseLocation = new Point(-1, -1);
             chkShowPassword.MouseState = MaterialSkin.MouseState.HOVER;
             chkShowPassword.Name = "chkShowPassword";
             chkShowPassword.ReadOnly = false;
             chkShowPassword.Ripple = true;
-            chkShowPassword.Size = new Size(152, 37);
+            chkShowPassword.Size = new Size(149, 37);
             chkShowPassword.TabIndex = 5;
-            chkShowPassword.Text = "Check Password";
+            chkShowPassword.Text = "Show Password";
             chkShowPassword.UseVisualStyleBackColor = true;
             chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
+            // 
+            // materialLabel1
+            // 
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H3;
+            materialLabel1.Location = new Point(88, 41);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(328, 58);
+            materialLabel1.TabIndex = 6;
+            materialLabel1.Text = "Pet Hotel Login";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(509, 450);
+            Controls.Add(materialLabel1);
             Controls.Add(chkShowPassword);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
@@ -202,5 +218,6 @@
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox21;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

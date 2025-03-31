@@ -22,17 +22,37 @@ namespace PetHotelApp
             InitializeComponent();
             _currentUser = user;
             _context = new AppDbContext();
+
+            SetupListView();
             LoadPets();
         }
+
+        private void SetupListView()
+        {
+            lvPets.View = View.Details;
+            lvPets.FullRowSelect = true;
+            lvPets.GridLines = true;
+
+            lvPets.Columns.Clear();
+            lvPets.Columns.Add("ID", 50);
+            lvPets.Columns.Add("Name", 100);
+            lvPets.Columns.Add("Type", 100);
+        }
+
 
         private void LoadPets()
         {
             lvPets.Items.Clear();
-            var pets = _context.Pets.Where(p => p.OwnerId == _currentUser.Id).ToList();
+
+            var pets = _context.Pets
+                .Where(p => p.OwnerId == _currentUser.Id)
+                .ToList();
 
             foreach (var pet in pets)
             {
-                var item = new ListViewItem(new[] { pet.Id.ToString(), pet.Name, pet.Type });
+                var item = new ListViewItem(pet.Id.ToString());
+                item.SubItems.Add(pet.Name);
+                item.SubItems.Add(pet.Type);
                 lvPets.Items.Add(item);
             }
         }

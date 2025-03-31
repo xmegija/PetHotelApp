@@ -29,21 +29,24 @@ namespace PetHotelApp
 
         private void LoadPets()
         {
-            cmbPets.Items.Clear();
-            var pets = _context.Pets.Where(p => p.OwnerId == _currentUser.Id).ToList();
-            foreach (var pet in pets)
-            {
-                cmbPets.Items.Add(new { pet.Id, pet.Name });
-            }
+            var pets = _context.Pets
+            .Where(p => p.OwnerId == _currentUser.Id)
+            .ToList();
+
+            cmbPets.DataSource = pets;
+            cmbPets.DisplayMember = "Name";
+            cmbPets.ValueMember = "Id";
         }
         private void LoadRooms()
         {
-            cmbRooms.Items.Clear();
-            var rooms = _context.Rooms.Where(r => !r.IsOccupied).ToList();
-            foreach (var room in rooms)
-            {
-                cmbRooms.Items.Add(new { room.Id, room.RoomNumber });
-            }
+            var rooms = _context.Rooms
+             .Where(r => !r.IsOccupied)
+             .Select(r => new { r.Id, Display = "Room " + r.RoomNumber })
+             .ToList();
+
+            cmbRooms.DataSource = rooms;
+            cmbRooms.DisplayMember = "Display";
+            cmbRooms.ValueMember = "Id";
         }
 
         private void btnBook_Click(object sender, EventArgs e)

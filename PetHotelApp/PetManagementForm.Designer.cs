@@ -42,13 +42,13 @@
             lvPets.BorderStyle = BorderStyle.None;
             lvPets.Depth = 0;
             lvPets.FullRowSelect = true;
-            lvPets.Location = new Point(43, 46);
+            lvPets.Location = new Point(12, 12);
             lvPets.MinimumSize = new Size(200, 100);
             lvPets.MouseLocation = new Point(-1, -1);
             lvPets.MouseState = MaterialSkin.MouseState.OUT;
             lvPets.Name = "lvPets";
             lvPets.OwnerDraw = true;
-            lvPets.Size = new Size(200, 100);
+            lvPets.Size = new Size(200, 249);
             lvPets.TabIndex = 0;
             lvPets.UseCompatibleStateImageBehavior = false;
             lvPets.View = View.Details;
@@ -67,7 +67,7 @@
             txtPetName.HideSelection = true;
             txtPetName.InsertKeyMode = InsertKeyMode.Default;
             txtPetName.LeadingIcon = null;
-            txtPetName.Location = new Point(43, 179);
+            txtPetName.Location = new Point(241, 31);
             txtPetName.Mask = "";
             txtPetName.MaxLength = 32767;
             txtPetName.MouseState = MaterialSkin.MouseState.OUT;
@@ -102,7 +102,7 @@
             btnAddPet.Depth = 0;
             btnAddPet.HighEmphasis = true;
             btnAddPet.Icon = null;
-            btnAddPet.Location = new Point(117, 291);
+            btnAddPet.Location = new Point(241, 184);
             btnAddPet.Margin = new Padding(4, 6, 4, 6);
             btnAddPet.MouseState = MaterialSkin.MouseState.HOVER;
             btnAddPet.Name = "btnAddPet";
@@ -129,7 +129,7 @@
             txtPetType.HideSelection = true;
             txtPetType.InsertKeyMode = InsertKeyMode.Default;
             txtPetType.LeadingIcon = null;
-            txtPetType.Location = new Point(308, 179);
+            txtPetType.Location = new Point(241, 97);
             txtPetType.Mask = "";
             txtPetType.MaxLength = 32767;
             txtPetType.MouseState = MaterialSkin.MouseState.OUT;
@@ -164,12 +164,12 @@
             btnRemovePet.Depth = 0;
             btnRemovePet.HighEmphasis = true;
             btnRemovePet.Icon = null;
-            btnRemovePet.Location = new Point(308, 291);
+            btnRemovePet.Location = new Point(384, 184);
             btnRemovePet.Margin = new Padding(4, 6, 4, 6);
             btnRemovePet.MouseState = MaterialSkin.MouseState.HOVER;
             btnRemovePet.Name = "btnRemovePet";
             btnRemovePet.NoAccentTextColor = Color.Empty;
-            btnRemovePet.Size = new Size(158, 36);
+            btnRemovePet.Size = new Size(107, 36);
             btnRemovePet.TabIndex = 4;
             btnRemovePet.Text = "RemovePet";
             btnRemovePet.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -181,7 +181,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(522, 298);
             Controls.Add(btnRemovePet);
             Controls.Add(txtPetType);
             Controls.Add(btnAddPet);

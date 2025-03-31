@@ -38,13 +38,13 @@
             lvReservations.BorderStyle = BorderStyle.None;
             lvReservations.Depth = 0;
             lvReservations.FullRowSelect = true;
-            lvReservations.Location = new Point(211, 139);
+            lvReservations.Location = new Point(25, 58);
             lvReservations.MinimumSize = new Size(200, 100);
             lvReservations.MouseLocation = new Point(-1, -1);
             lvReservations.MouseState = MaterialSkin.MouseState.OUT;
             lvReservations.Name = "lvReservations";
             lvReservations.OwnerDraw = true;
-            lvReservations.Size = new Size(200, 100);
+            lvReservations.Size = new Size(450, 100);
             lvReservations.TabIndex = 0;
             lvReservations.UseCompatibleStateImageBehavior = false;
             lvReservations.View = View.Details;
@@ -53,7 +53,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(499, 253);
             Controls.Add(lvReservations);
             Name = "ReservationViewForm";
             Text = "ReservationViewForm";

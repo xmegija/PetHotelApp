@@ -22,19 +22,49 @@ namespace PetHotelApp
             InitializeComponent();
             _currentUser = user;
             _context = new AppDbContext();
+
+            SetupListView();
             LoadReservations();
         }
+
+        private void SetupListView()
+        {
+            lvReservations.View = View.Details;
+            lvReservations.FullRowSelect = true;
+            lvReservations.GridLines = true;
+
+            lvReservations.Columns.Clear();
+            lvReservations.Columns.Add("ID", 50);
+            lvReservations.Columns.Add("Pet", 100);
+            lvReservations.Columns.Add("Room", 100);
+            lvReservations.Columns.Add("Start Date", 100);
+            lvReservations.Columns.Add("End Date", 100);
+        }
+
         private void LoadReservations()
         {
             lvReservations.Items.Clear();
+
             var reservations = _context.Reservations
                 .Where(r => r.Pet.OwnerId == _currentUser.Id)
-                .Select(r => new { r.Id, r.Pet.Name, r.Room.RoomNumber, r.StartDate, r.EndDate })
+                .Select(r => new
+                {
+                    r.Id,
+                    PetName = r.Pet.Name,
+                    Room = r.Room.RoomNumber,
+                    Start = r.StartDate,
+                    End = r.EndDate
+                })
                 .ToList();
 
             foreach (var res in reservations)
             {
-                var item = new ListViewItem(new[] { res.Id.ToString(), res.Name, res.RoomNumber, res.StartDate.ToShortDateString(), res.EndDate.ToShortDateString() });
+                var item = new ListViewItem(res.Id.ToString());
+                item.SubItems.Add(res.PetName);
+                item.SubItems.Add(res.Room);
+                item.SubItems.Add(res.Start.ToShortDateString());
+                item.SubItems.Add(res.End.ToShortDateString());
+
                 lvReservations.Items.Add(item);
             }
         }

@@ -49,11 +49,11 @@
             cmbPets.FormattingEnabled = true;
             cmbPets.IntegralHeight = false;
             cmbPets.ItemHeight = 43;
-            cmbPets.Location = new Point(65, 44);
+            cmbPets.Location = new Point(33, 44);
             cmbPets.MaxDropDownItems = 4;
             cmbPets.MouseState = MaterialSkin.MouseState.OUT;
             cmbPets.Name = "cmbPets";
-            cmbPets.Size = new Size(121, 49);
+            cmbPets.Size = new Size(200, 49);
             cmbPets.StartIndex = 0;
             cmbPets.TabIndex = 0;
             // 
@@ -71,24 +71,24 @@
             cmbRooms.FormattingEnabled = true;
             cmbRooms.IntegralHeight = false;
             cmbRooms.ItemHeight = 43;
-            cmbRooms.Location = new Point(248, 49);
+            cmbRooms.Location = new Point(33, 110);
             cmbRooms.MaxDropDownItems = 4;
             cmbRooms.MouseState = MaterialSkin.MouseState.OUT;
             cmbRooms.Name = "cmbRooms";
-            cmbRooms.Size = new Size(121, 49);
+            cmbRooms.Size = new Size(200, 49);
             cmbRooms.StartIndex = 0;
             cmbRooms.TabIndex = 1;
             // 
             // dtpStartDate
             // 
-            dtpStartDate.Location = new Point(76, 191);
+            dtpStartDate.Location = new Point(33, 178);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(200, 23);
             dtpStartDate.TabIndex = 2;
             // 
             // dtpEndDate
             // 
-            dtpEndDate.Location = new Point(306, 191);
+            dtpEndDate.Location = new Point(33, 221);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(200, 23);
             dtpEndDate.TabIndex = 3;
@@ -100,7 +100,7 @@
             btnBook.Depth = 0;
             btnBook.HighEmphasis = true;
             btnBook.Icon = null;
-            btnBook.Location = new Point(118, 314);
+            btnBook.Location = new Point(96, 264);
             btnBook.Margin = new Padding(4, 6, 4, 6);
             btnBook.MouseState = MaterialSkin.MouseState.HOVER;
             btnBook.Name = "btnBook";
@@ -117,7 +117,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(291, 450);
             Controls.Add(btnBook);
             Controls.Add(dtpEndDate);
             Controls.Add(dtpStartDate);
